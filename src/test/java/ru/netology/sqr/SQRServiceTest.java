@@ -7,50 +7,50 @@ import static org.junit.jupiter.api.Assertions.*;
 class SQRServiceTest {
 
     @Test
-    void finderFunc() {
+    void tryToCalculateRange() {
         SQRService service = new SQRService();
-        int a = 200;
-        int b = 300;
+        int minCount = 200;
+        int maxCount = 300;
         int expected = 3;
 
-        int actual = service.func(a, b);
+        int actual = service.calculateRange(minCount, maxCount);
 
         assertEquals(expected, actual);
     }
 
     @Test
-    void outOfLimitFunc() {
+    void outOfLimit() {
         SQRService service = new SQRService();
-        int a = 0;
-        int b = 99;
+        int minCount = 0;
+        int maxCount = 99;
         int expected = 0;
 
-        int actual = service.func(a, b);
+        int actual = service.calculateRange(minCount, maxCount);
 
         assertEquals(expected, actual);
     }
 
-@Test
-    void minusFunc() {
-            SQRService service = new SQRService();
-            int a = -1200;
-            int b = -100;
-            int expected = 0;
+    @Test
+    void negativeRange() {
+        SQRService service = new SQRService();
+        int minCount = -1200;
+        int maxCount = -100;
+        int expected = 0;
 
-            int actual = service.func(a, b);
+        int actual = service.calculateRange(minCount, maxCount);
 
-            assertEquals(expected, actual);
-            }
+        assertEquals(expected, actual);
+    }
 
-@Test
-    void equalFunc() {
-            SQRService service = new SQRService();
-            int a = 100;
-            int b = 9801;
-            int expected = 88;
+    @Test
+    void absoluteRange() {
+        SQRService service = new SQRService();
+        int minCount = 100;
+        int maxCount = 9801;
+        int expected = 88;
 
-            int actual = service.func(a, b);
+        int actual = service.calculateRange(minCount, maxCount);
 
-            assertEquals(expected, actual);
-            }
-            }
+        assertEquals(expected, actual);
+    }
+}
