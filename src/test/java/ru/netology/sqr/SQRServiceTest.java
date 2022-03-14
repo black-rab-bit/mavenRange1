@@ -47,7 +47,7 @@ class SQRServiceTest {
         SQRService service = new SQRService();
         int minCount = 100;
         int maxCount = 9801;
-        int expected = 88;
+        int expected = 90;
 
         int actual = service.calculateRange(minCount, maxCount);
 
